@@ -1,0 +1,14 @@
+﻿<head>
+    <title>Error</title>
+</head>
+<body>
+    <h2 class="display-4">Algo salió mal</h2>
+    <p>
+        Hubo un problema con su pin de tarjeta.
+        Ingresó un pin incorrecto 4 veces, lo que provocó que su tarjeta se bloqueara.
+    </p>
+    <form action="/Home/Enter" method="post" name="pin" id="pin">
+        <input type="hidden" name="number" id="number" value="@TempData["number"]">
+        <button type="submit" class="btn btn-lg btn-danger btn-block">Volver atrás</button>
+    </form>
+</body>

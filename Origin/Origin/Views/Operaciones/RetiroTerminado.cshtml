@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Operaciones";
+}
+
+@model Origin.Dto.TarjetaDto
+<head>
+    <title>Balance</title>
+</head>
+<body>
+    <h5 class="display-4">Operación realizada con éxito. Ahora, su cuenta posee los siguientes valores:</h5>
+    <table id="table1" border="1" bgcolor="#ebdbdb">
+        <tr>
+            <th>Número de tarjeta</th>
+            <th>Balance</th>
+        </tr>
+        <tbody id="body1">
+            <tr>
+                <td>@Model.Numero
+                <td>@Model.Balance
+            </tr>
+        </tbody>
+    </table>
+
+    <center>
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Salir</a>
+    </center>
+</body>

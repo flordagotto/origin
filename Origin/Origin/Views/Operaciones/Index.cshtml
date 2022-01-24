@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Operaciones";
+}
+
+<head>
+    <title>Operaciones</title>
+</head>
+<body>
+    <h3>Por favor, seleccione la operación que desea realizar</h3>
+    <h5>Número de tarjeta: @TempData["number"]</h5>
+    <!--<form action="/Operaciones/Operacion" method="post">
+        <input type="hidden" name="number" id="number" value="@TempData["number"]">-->
+    @*<input type="radio" name="operacion" id="operacion" value="Retiro">  Retiro
+        <input type="radio" name="operacion" id="operacion" checked="checked" value="Balance">  Balance*@
+    <!--<button type="submit" value="balance">Balance</button>
+        <button type="submit" value="retiro">Retiro</button>
+        <center>
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Volver al inicio</a>
+        </center>
+    </form>-->
+    <form action="/Operaciones/BalanceOp" method="post">
+        <input type="hidden" name="number" id="number" value="@TempData["number"]">
+        <button type="submit">Balance</button>
+    </form>
+
+    <form action="/Operaciones/RetiroOp" method="post">
+        <input type="hidden" name="numberR" id="numberR" value="@TempData["number"]">
+        <button type="submit">Retiro</button>
+    </form>
+    <center>
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Volver al inicio</a>
+    </center>
+
+</body>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Operaciones";
+}
+
+@model string
+<head>
+    <title>Balance</title>
+</head>
+<body>
+    <p>Ingrese el monto a retirar</p>
+    <form action="/Operaciones/Retiro" method="post" name="pin" id="pin">
+        <input type="hidden" name="number" id="number" value="@Model">
+        <input type="number" name ="amount" id ="amount" min="0" value="0" step=".01">
+        <button type="submit" class="btn btn-lg btn-danger btn-block">Aceptar</button>
+    </form>
+</body>

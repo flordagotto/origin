@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Operaciones";
+}
+
+@model Origin.Dto.TarjetaDto
+<head>
+    <title>Balance</title>
+</head>
+<body>
+    <h5 class="display-4">Su cuenta posee el siguiente monto: @Model.Balance</h5>
+    <form action="/Operaciones/Index" method="post" name="pin" id="pin">
+        <input type="hidden" name="number" id="number" value="@Model.Numero">
+        <button type="submit" class="btn btn-lg btn-danger btn-block">Volver a operaciones</button>
+    </form>
+</body>

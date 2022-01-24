@@ -1,0 +1,50 @@
+﻿@{ 
+    ViewData["Title"] = "Pin";
+}
+
+@model Origin.Dto.TarjetaDto
+<head>
+    <title>PIN</title>
+</head>
+<body>
+    <h3>Por favor, ingrese el pin de su tarjeta</h3>
+    <p>Número de tarjeta: @Model.Numero</p>
+    @if (Model.Tries != 0)
+    {
+        <p>ERROR: Ingresó incorrectamente su clave. Al cuarto intento, su tarjeta su bloqueará. Número de intentos: @Model.Tries</p>
+    }
+<div class="teclado"
+    <center>
+        <p>
+            <input type="button" value="1" onclick="numero('1')" />
+            <input type="button" value="2" onclick="numero('2')" />
+            <input type="button" value="3" onclick="numero('3')" />
+        </p>
+        <p>
+            <input type="button" value="4" onclick="numero('4')" />
+            <input type="button" value="5" onclick="numero('5')" />
+            <input type="button" value="6" onclick="numero('6')" />
+        </p>
+        <p>
+            <input type="button" value="7" onclick="numero(7)" />
+            <input type="button" value="8" onclick="numero('8')" />
+            <input type="button" value="9" onclick="numero('9')" />
+        </p>
+        <p>
+            <input type="button" value="0" onclick="numero('0')" />
+        </p>
+        <p>
+            <input type="button" value="Limpiar" onclick="numero(-2)" />
+        </p>
+    </center>
+    <form action="/Home/Pin" method="post" name="pin" id="pin">
+        <input type="hidden" name="number" id="number" value="@Model.Numero">
+        <input type="hidden" name="pin" id="valores">
+        <p id="textoPantalla"></p>
+        <button type="submit" class="btn btn-lg btn-danger btn-block">Aceptar</button>
+        <center>
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Salir</a>
+        </center>
+    </form>
+</div>
+</body>

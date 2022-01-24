@@ -1,0 +1,13 @@
+﻿<head>
+    <title>Error</title>
+</head>
+<body>
+    <h2 class="display-4">Algo salió mal</h2>
+    <p>
+        Hubo un problema con el retiro del dinero. El monto que ingresó excede el balance de la tarjeta. Intente nuevamente.
+    </p>
+    <form action="/Home/Enter" method="post" name="pin" id="pin">
+        <input type="hidden" name="number" id="number" value="@TempData["number"]">
+        <button type="submit" class="btn btn-lg btn-danger btn-block">Volver atrás</button>
+    </form>
+</body>

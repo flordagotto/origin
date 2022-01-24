@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3>Inicio</h3>
+    <p>Por favor, ingrese el número de su tarjeta. Debe ser un número de 16 dígitos</p>
+    <div class="teclado"
+            <p>
+                <input type="button" value="1" onclick="numero('1')" />
+                <input type="button" value="2" onclick="numero('2')" />
+                <input type="button" value="3" onclick="numero('3')" />
+            </p>
+            <p>
+                <input type="button" value="4" onclick="numero('4')" />
+                <input type="button" value="5" onclick="numero('5')" />
+                <input type="button" value="6" onclick="numero('6')" />
+            </p>
+            <p>
+                <input type="button" value="7" onclick="numero(7)" />
+                <input type="button" value="8" onclick="numero('8')" />
+                <input type="button" value="9" onclick="numero('9')" />
+            </p>
+            <p>
+                <input type="button" value="Limpiar" onclick="numero(-2)" />
+                <input type="button" value="0" onclick="numero('0')" />
+            </p>
+            <form action="/Home/Enter" method="post" name="teclado" id="teclado">
+                <p id="textoPantalla"></p>
+                <input type="hidden" id="valores" name="number">
+                <button type="submit" class="btn btn-lg btn-danger btn-block">Aceptar</button>
+            </form>
+</div>
+</div>
